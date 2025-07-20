@@ -1,0 +1,116 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 45 100% 51%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 45 100% 51%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 45 100% 51%;
+    --input: 0 0% 10%;
+    --ring: 45 100% 51%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 45 100% 51%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 10%;
+    --sidebar-ring: 45 100% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-playfair;
+  }
+
+  .royal-border {
+    @apply border-2 border-royal-gold rounded-lg;
+  }
+
+  .royal-gradient {
+    @apply bg-royal-gradient;
+  }
+
+  .royal-text {
+    @apply text-royal-gold font-playfair;
+  }
+
+  .royal-shadow {
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+  }
+
+  /* Replace font-great-vibes with professional Playfair Display */
+  .font-great-vibes {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .btn-royal {
+    @apply bg-royal-gold hover:bg-royal-gold-dark text-black font-semibold py-2 px-6 rounded-lg transition-all duration-300 royal-shadow hover:scale-105;
+  }
+
+  .card-royal {
+    @apply bg-card border-royal-gold border-2 rounded-lg p-6 royal-shadow hover:shadow-lg transition-all duration-300;
+  }
+
+  .text-royal-title {
+    @apply font-playfair text-4xl font-bold text-royal-gold mb-4;
+  }
+
+  .text-royal-subtitle {
+    @apply font-playfair text-xl font-semibold text-royal-gold mb-2;
+  }
+}
