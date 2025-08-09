@@ -6,7 +6,6 @@ const Footer = () => {
     <footer className="bg-royal-black border-t-2 border-royal-gold text-white mt-auto">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          
           {/* Restaurant Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -16,7 +15,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-300 text-sm">
-              Experience the finest Indian cuisine with royal hospitality. 
+              Experience the finest Indian cuisine with royal hospitality.
               Flavors inspired by the seasons, traditions preserved through generations.
             </p>
           </div>
@@ -66,34 +65,34 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-cinzel text-lg font-semibold text-royal-gold">Follow Us</h3>
             <div className="flex space-x-4">
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://facebook.com/Dine24Official"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-royal-gold transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://instagram.com/Dine24Official"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-royal-gold transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://twitter.com/Dine24Official"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-royal-gold transition-colors"
               >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a 
-                href="https://youtube.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://youtube.com/@Dine24Official"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-royal-gold transition-colors"
               >
                 <Youtube className="h-5 w-5" />
