@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Crown, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
@@ -7,6 +6,7 @@ const Footer = () => {
     <footer className="bg-royal-black border-t-2 border-royal-gold text-white mt-auto">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          
           {/* Restaurant Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -66,16 +66,36 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-cinzel text-lg font-semibold text-royal-gold">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-royal-gold transition-colors">
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-300 hover:text-royal-gold transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-royal-gold transition-colors">
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-300 hover:text-royal-gold transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-royal-gold transition-colors">
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-300 hover:text-royal-gold transition-colors"
+              >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-royal-gold transition-colors">
+              <a 
+                href="https://youtube.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-300 hover:text-royal-gold transition-colors"
+              >
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
