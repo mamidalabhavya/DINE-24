@@ -333,7 +333,11 @@ supabase functions deploy ai-chat
 
 **Name:** MAMIDALA BHAVYA REDDY  
 **Role:** Full Stack Developer  
-**Specialization:** React.js, TypeScript, Supabase, AI Integration  
+**Specialization:** React.js, TypeScript, Supabase, AI Integration
+
+**Name:** DHADI SAI PRANEETH REDDY  
+**Role:** Full Stack Developer  
+**Specialization:** React.js, TypeScript, Supabase, AI Integration
 
 ### Technical Achievements:
 - Built responsive restaurant management system using React and TypeScript
