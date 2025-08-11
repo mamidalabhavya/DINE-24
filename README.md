@@ -33,7 +33,7 @@
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   AI SERVICES   │    │   REAL-TIME     │    │   DEPLOYMENT    │
 │                 │    │   FEATURES      │    │                 │
-│ • Gemini API    │    │                 │    │ • Lovable       │
+│ • Gemini API    │    │                 │    │ • Netlify       │
 │ • Context Aware │    │ • Live Updates  │    │ • Hot Reload    │
 │ • Navigation    │    │ • Toast Alerts  │    │ • Preview Mode  │
 │ • Menu Context  │    │ • State Sync    │    │ • Build System  │
