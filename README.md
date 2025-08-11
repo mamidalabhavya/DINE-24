@@ -1,7 +1,7 @@
 
 # 🍽️ DINE24 - AI-Powered Restaurant Management System
 
-**Developer:** MAMIDALA BHAVYA REDDY  
+**Developer:** MAMIDALA BHAVYA REDDY  &  DHADI SAI PRANEETH REDDY
 **🏆 Full Stack Web Application with Advanced AI Integration**
 
 ---
@@ -359,4 +359,4 @@ supabase functions deploy ai-chat
 **Version:** 1.0.0  
 **Last Updated:** January 2024  
 **Tech Stack:** React, TypeScript, Supabase, Gemini AI  
-**Developer:** MAMIDALA BHAVYA REDDY
+**Developer:** MAMIDALA BHAVYA REDDY & DHADI SAI PRANEETH REDDY 
