@@ -107,9 +107,16 @@ const Index = () => {
               <Card key={dish.id} className="card-royal group hover:scale-105 transition-transform">
                 <CardHeader className="relative">
                   <div className="flex justify-between items-start">
-                    <Badge variant={dish.is_veg ? "secondary" : "destructive"} className="mb-2">
+                    <Badge
+                      className={`mb-2 ${
+                        dish.is_veg
+                          ? "bg-green-500/20 text-green-600 border border-green-500"
+                          : "bg-red-500/20 text-red-600 border border-red-500"
+                      }`}
+                    >
                       {dish.is_veg ? "Veg" : "Non-Veg"}
                     </Badge>
+
                     <div className="flex items-center space-x-1">
                       <Star className="h-4 w-4 fill-royal-gold text-royal-gold" />
                       <span className="font-semibold">{dish.rating}</span>
