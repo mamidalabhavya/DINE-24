@@ -66,9 +66,13 @@ const Index = () => {
         <div className="container mx-auto text-center relative z-10">
           <div className="bg-gradient-to-r from-transparent via-royal-gold/10 to-transparent p-1 rounded-2xl mb-8">
             <div className="bg-background/80 backdrop-blur-sm rounded-xl p-8 border border-royal-gold/30">
-              <h1 className="font-playfair text-6xl md:text-7xl font-bold bg-gradient-to-r from-royal-gold via-yellow-500 to-royal-gold bg-clip-text text-transparent mb-6 drop-shadow-2xl">
-                DINE24
-              </h1>
+              <div className="flex items-center justify-center space-x-3 mb-6">
+                <Crown className="h-12 w-12 text-royal-gold drop-shadow-lg" />
+                  <span className="font-great-vibes text-6xl md:text-7xl font-bold text-royal-gold drop-shadow-2xl">
+                   Dine 24
+                  </span>
+                 </div>
+
               <div className="w-32 h-1 bg-gradient-to-r from-transparent via-royal-gold to-transparent mx-auto mb-6"></div>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto font-medium">
                 Experience Royal Dining Excellence Around the Clock
@@ -203,9 +207,21 @@ const Index = () => {
       <section className="py-20 px-4 bg-background">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-playfair text-5xl font-bold text-royal-gold mb-6">
-              Why Choose DINE24?
-            </h2>
+           <div className="flex items-center justify-center mb-16 space-x-4">
+  {/* Left side: Why Choose */}
+  <h2 className="font-playfair text-4xl md:text-5xl font-bold text-royal-gold">
+    Why Choose
+  </h2>
+
+  {/* Right side: Crown + Dine24 */}
+  <div className="flex items-center space-x-3">
+    <Crown className="h-10 w-10 md:h-12 md:w-12 text-royal-gold drop-shadow-lg" />
+    <span className="font-great-vibes text-5xl md:text-6xl font-bold text-royal-gold drop-shadow-2xl">
+      Dine 24 ?
+    </span>
+  </div>
+</div>
+
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

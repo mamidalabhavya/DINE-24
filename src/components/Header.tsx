@@ -1,6 +1,6 @@
 
 import { Link, useNavigate } from "react-router-dom";
-import { Menu, X, Sun, Moon, Phone, Settings, LogIn } from "lucide-react";
+import { Menu, X, Sun, Moon, Phone, Settings, LogIn,Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/ThemeProvider";
 import { useState } from "react";
@@ -26,10 +26,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="font-playfair text-3xl font-bold bg-gradient-to-r from-royal-gold to-yellow-600 bg-clip-text text-transparent tracking-wider drop-shadow-sm">
-              DINE24
-            </span>
-          </Link>
+            <Crown className="h-8 w-8 text-royal-gold drop-shadow-md" />
+             <span className="font-great-vibes text-3xl font-bold text-royal-gold drop-shadow-lg">
+               Dine 24
+              </span>
+            </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
