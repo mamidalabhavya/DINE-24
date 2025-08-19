@@ -155,13 +155,13 @@ const Services = () => {
             {mainServices.map((service, index) => (
               <Card key={index} className="card-royal hover:scale-105 transition-transform">
                 <CardHeader className="text-center">
-                  <div className="mx-auto mb-4">
+                  <div className="flex justify-center items-center mb-4">
                     {service.icon}
                   </div>
-                  <CardTitle className="text-royal-subtitle">{service.title}</CardTitle>
+                  <CardTitle className="text-royal-subtitle whitespace-nowrap text-center">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-center">
+                  <p className="text-muted-foreground text-center text-[15px] max-w-[400px] mx-auto">
                     {service.description}
                   </p>
                   <ul className="space-y-2">
@@ -173,7 +173,7 @@ const Services = () => {
                     ))}
                   </ul>
                   <Link to={service.link}>
-                    <Button className="btn-royal w-full">
+                    <Button className="btn-royal w-full mt-4 ">
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
