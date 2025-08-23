@@ -3,14 +3,43 @@ import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, Sun, Moon, Phone, Settings, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/ThemeProvider";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const navigate = useNavigate();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const isAdminLoggedIn = localStorage.getItem("adminAuth") === "true";
+
+  // Handle clicks outside the mobile menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (
+        isMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Add event listeners when menu is open
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    // Cleanup event listeners
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   const handleReserveTable = () => {
     navigate("/reserve-table");
@@ -88,6 +117,7 @@ const Header = () => {
               size="icon"
               className="md:hidden border border-royal-gold/20"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              ref={menuButtonRef}
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6 text-royal-gold" />
@@ -100,7 +130,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-2 bg-gradient-to-b from-royal-gold/5 to-transparent rounded-b-lg">
+          <div className="md:hidden py-4 space-y-2 bg-gradient-to-b from-royal-gold/5 to-transparent rounded-b-lg" ref={menuRef}>
             <Link
               to="/about"
               className="block py-2 text-muted-foreground hover:text-royal-gold transition-colors"
