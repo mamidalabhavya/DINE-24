@@ -136,37 +136,76 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Journey */}
-      <section className="px-4 mb-16">
-        <div className="container mx-auto">
-          <h2 className="text-royal-title text-center mb-12">Our Journey</h2>
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-royal-gold"></div>
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <Card className={`card-royal w-full max-w-lg ${index % 2 === 0 ? 'mr-8' : 'ml-8'}`}>
-                    <CardHeader>
-                      <div className="flex items-center space-x-4">
-                        <Badge className="bg-royal-gold text-black text-lg px-3 py-1">
-                          {milestone.year}
-                        </Badge>
-                        <CardTitle className="text-royal-subtitle">{milestone.title}</CardTitle>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">
-                        {milestone.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                  <div className="w-4 h-4 bg-royal-gold rounded-full border-4 border-background absolute left-1/2 transform -translate-x-1/2"></div>
+{/* Our Journey */}
+<section className="px-4 mb-16">
+  <div className="container mx-auto">
+    <h2 className="text-royal-title text-center mb-12">Our Journey</h2>
+    <div className="relative">
+      {/* Timeline line */}
+      <div
+        className="
+          absolute 
+          left-[100%] translate-x-0    /* Mobile: right side, away from box */
+          md:left-1/2 md:-translate-x-1/2 /* Desktop: center */
+          h-full w-1 bg-royal-gold
+        "
+      ></div>
+
+      <div className="space-y-12">
+        {milestones.map((milestone, index) => (
+          <div
+            key={index}
+            className="
+              flex items-center
+              justify-start           /* Mobile: always left */
+              md:justify-start md:even:justify-end
+              relative
+            "
+          >
+            {/* Card */}
+            <Card
+              className="
+                card-royal w-full max-w-lg
+                mr-6                   /* Space on mobile to avoid overlap */
+                md:mr-8 md:ml-0
+                md:even:ml-8 md:even:mr-0
+              "
+            >
+              <CardHeader>
+                <div className="flex items-center space-x-4">
+                  <Badge className="bg-royal-gold text-black text-lg px-3 py-1">
+                    {milestone.year}
+                  </Badge>
+                  <CardTitle className="text-royal-subtitle">
+                    {milestone.title}
+                  </CardTitle>
                 </div>
-              ))}
-            </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  {milestone.description}
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Dot */}
+            <div
+              className="
+                w-4 h-4 bg-royal-gold rounded-full border-4 border-background
+                absolute 
+                left-[100%] translate-x-0   /* Mobile: right */
+                md:left-1/2 md:-translate-x-1/2 /* Desktop: center */
+              "
+            ></div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
       {/* Mission & Vision */}
       <section className="px-4 mb-16 bg-royal-gradient py-16">
