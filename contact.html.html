@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dine24 | Contact Us</title>
+
+  <!-- Google Font Delius -->
+  <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Delius', cursive;
+      background: linear-gradient(270deg, #111, #1a1a1a, #111);
+      background-size: 600% 600%;
+      animation: bgAnimate 20s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes bgAnimate {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Page Heading */
+    .page-header {
+      text-align: center;
+      padding: 60px 20px 30px;
+      background: #000;
+    }
+    .page-header h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: #FFD700;
+    }
+    .page-header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    /* Container */
+    .contact-section {
+      padding: 50px 10%;
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    /* Left Info Section */
+    .contact-info {
+      flex: 1;
+    }
+    .contact-info h2 {
+      font-size: 2rem;
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+    .info-card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: 0.3s;
+    }
+    .info-card:hover {
+      transform: translateX(8px);
+      background: #222;
+    }
+    .info-card i {
+      font-size: 1.5rem;
+      color: #FFD700;
+    }
+    .info-type {
+      font-weight: bold;
+      color: #FFD700;
+      margin-bottom: 3px;
+    }
+
+    /* Right Form + Map */
+    .contact-form {
+      flex: 1;
+    }
+    .contact-form h2 {
+      font-size: 2rem;
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 1rem;
+    }
+    input:focus, textarea:focus {
+      border: 1px solid #FFD700;
+    }
+    button {
+      background: #FFD700;
+      color: #000;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e6c200;
+    }
+
+    /* Map */
+    .map {
+      margin-top: 25px;
+    }
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: #ccc;
+      padding: 40px 10%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+    footer h3 {
+      color: #FFD700;
+      margin-bottom: 15px;
+    }
+    footer p, footer a {
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #ccc;
+    }
+    footer a:hover {
+      color: #FFD700;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      font-size: 0.85rem;
+      background: #0d0d0d;
+    }
+
+    @media (max-width: 900px) {
+      .contact-section {
+        flex-direction: column;
+      }
+      footer {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      footer {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Heading -->
+  <div class="page-header">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. Reach out for reservations, inquiries, or just to say hello.</p>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <!-- Left Info -->
+    <div class="contact-info">
+      <h2>Contact Info</h2>
+
+      <div class="info-card">
+        <i class="fas fa-location-dot"></i>
+        <div>
+          <div class="info-type">Address</div>
+          <p>Dine 24, Kothapet, Hyderabad, Telangana, India</p>
+          <p>Visit Us</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <i class="fas fa-phone"></i>
+        <div>
+          <div class="info-type">Phone</div>
+          <p>+91 91333 35476</p>
+          <p>Available 24/7 for reservations</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <div class="info-type">Email</div>
+          <p>bhavyareddy.mamidala@gmail.com</p>
+          <p>We'll get back to you within 24 hours</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <i class="fas fa-clock"></i>
+        <div>
+          <div class="info-type">Availability</div>
+          <p>Available 24/7 for reservations</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Form + Map -->
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5027914221096!2d78.5426!3d17.3616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99127384bff7%3A0xb0f7988b5f1!2sKothapet%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1700000000000"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h3>Dine24</h3>
+      <p>Experience the finest Indian cuisine with royal hospitality. Flavors inspired by the seasons, traditions preserved through generations.</p>
+    </div>
+    <div>
+      <h3>Contact Info</h3>
+      <p><i class="fas fa-location-dot"></i> Dine 24, Kothapet, Hyderabad</p>
+      <p><i class="fas fa-phone"></i> +91 91333 35476</p>
+      <p><i class="fas fa-envelope"></i> bhavyareddy.mamidala@gmail.com</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <p><a href="#">About Restaurant</a></p>
+      <p><a href="#">Our Menu</a></p>
+      <p><a href="#">Services</a></p>
+      <p><a href="#">Reserve Table</a></p>
+      <p><a href="#">Contact Us</a></p>
+    </div>
+    <div>
+      <h3>Follow Us</h3>
+      <p>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </p>
+      <p>Stay connected for latest updates, special offers, and culinary delights.</p>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    © 2025 Dine24. All rights reserved. | Crafted with royal elegance and modern technology.
+  </div>
+
+</body>
+</html>
