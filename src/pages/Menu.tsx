@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +23,16 @@ const Menu = () => {
       return data;
     }
   });
+
+  // Reset all filters
+  const clearFilters = () => {
+    setSearchQuery("");
+    setCategoryFilter("");
+    setVegFilter(null);
+  };
+
+  // Check if any filters are applied
+  const hasFilters = searchQuery !== "" || categoryFilter !== "" || vegFilter !== null;
 
   if (isLoading) {
     return (
@@ -72,13 +81,24 @@ const Menu = () => {
 
       {/* Search and Filters */}
       <section className="px-4 mb-8">
-        <div className="container mx-auto">
+        <div className="container mx-auto flex flex-col sm:flex-row gap-4 items-center">
           <MenuSearch
             onSearch={setSearchQuery}
             onCategoryFilter={setCategoryFilter}
             onVegFilter={setVegFilter}
             categories={categories}
           />
+          <button
+            onClick={clearFilters}
+            disabled={!hasFilters}
+            className={`px-4 py-2 rounded-md font-semibold text-sm transition-colors ${
+              hasFilters
+                ? 'bg-royal-gold text-black hover:bg-royal-gold/80'
+                : 'bg-gray-500 text-gray-300 cursor-not-allowed'
+            }`}
+          >
+            Clear Filters
+          </button>
         </div>
       </section>
 
