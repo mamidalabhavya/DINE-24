@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +10,7 @@ const Menu = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
   const [vegFilter, setVegFilter] = useState<boolean | null>(null);
+  const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
 
   const { data: menuItems, isLoading } = useQuery({
     queryKey: ['menu-items'],
@@ -24,6 +24,25 @@ const Menu = () => {
       return data;
     }
   });
+
+  // Reset all filters
+  const clearFilters = () => {
+    setSearchQuery("");
+    setCategoryFilter("");
+    setVegFilter(null);
+  };
+
+  // Check if any filters are applied
+  const hasFilters = searchQuery !== "" || categoryFilter !== "" || vegFilter !== null;
+
+  // Toggle expanded state for a category
+  const toggleCategory = (category: string) => {
+    setExpandedCategories(prev =>
+      prev.includes(category)
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
+    );
+  };
 
   if (isLoading) {
     return (
@@ -72,13 +91,24 @@ const Menu = () => {
 
       {/* Search and Filters */}
       <section className="px-4 mb-8">
-        <div className="container mx-auto">
+        <div className="container mx-auto flex flex-col sm:flex-row gap-4 items-center">
           <MenuSearch
             onSearch={setSearchQuery}
             onCategoryFilter={setCategoryFilter}
             onVegFilter={setVegFilter}
             categories={categories}
           />
+          <button
+            onClick={clearFilters}
+            disabled={!hasFilters}
+            className={`px-4 py-2 rounded-md font-semibold text-sm transition-colors ${
+              hasFilters
+                ? 'bg-royal-gold text-black hover:bg-royal-gold/90'
+                : 'bg-muted text-muted-foreground cursor-not-allowed'
+            }`}
+          >
+            Clear Filters
+          </button>
         </div>
       </section>
 
@@ -88,7 +118,7 @@ const Menu = () => {
           <div className="container mx-auto">
             <h2 className="font-playfair text-4xl font-bold text-royal-gold text-center mb-12">{category}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {items.map((item: any) => (
+              {(expandedCategories.includes(category) ? items : items.slice(0, 6)).map((item: any) => (
                 <Card key={item.id} className="card-royal hover:scale-105 transition-transform">
                   <div className="relative">
                     <img 
@@ -153,6 +183,16 @@ const Menu = () => {
                 </Card>
               ))}
             </div>
+            {items.length > 6 && (
+              <div className="text-center mt-8">
+                <button
+                  onClick={() => toggleCategory(category)}
+                  className="px-4 py-2 rounded-md font-semibold text-sm bg-royal-gold text-black hover:bg-royal-gold/90 transition-colors"
+                >
+                  {expandedCategories.includes(category) ? 'Show Less' : 'Show More'}
+                </button>
+              </div>
+            )}
           </div>
         </section>
       ))}
