@@ -66,16 +66,16 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-cinzel text-lg font-semibold text-royal-gold">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-royal-gold transition-colors">
+              <a href="https://www.facebook.com/" title="Facebook" className="text-gray-300 hover:text-royal-gold transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-royal-gold transition-colors">
+              <a href="https://www.instagram.com/" title="Instagram" className="text-gray-300 hover:text-royal-gold transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-royal-gold transition-colors">
+              <a href="https://twitter.com/" title="Twitter" className="text-gray-300 hover:text-royal-gold transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-royal-gold transition-colors">
+              <a href="https://www.youtube.com/" title="YouTube" className="text-gray-300 hover:text-royal-gold transition-colors">
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
