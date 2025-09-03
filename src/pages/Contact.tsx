@@ -94,25 +94,53 @@ const Contact = () => {
 
           {/* Contact Form */}
           <Card className="card-royal">
-            <CardHeader>
-              <CardTitle className="text-royal-subtitle">Send us a Message</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Input placeholder="Your Name" className="royal-border" />
-                <Input placeholder="Your Email" type="email" className="royal-border" />
-              </div>
-              <Input placeholder="Subject" className="royal-border" />
-              <Textarea 
-                placeholder="Your Message" 
-                className="royal-border min-h-32"
-                rows={4}
-              />
-              <Button className="btn-royal w-full">
-                Send Message <Send className="ml-2 h-4 w-4" />
-              </Button>
-            </CardContent>
-          </Card>
+  <CardHeader>
+    <CardTitle className="text-royal-subtitle">Send us a Message</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <form
+      className="space-y-4"
+      onSubmit={(e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+        const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+        const subject = (form.elements.namedItem("subject") as HTMLInputElement).value;
+        const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
+
+        if (!name || !email || !subject || !message) {
+          alert("⚠️ All fields are required.");
+          return;
+        }
+
+        if (!/\S+@\S+\.\S+/.test(email)) {
+          alert("⚠️ Please enter a valid email address.");
+          return;
+        }
+
+        alert("✅ Message sent successfully!");
+        form.reset();
+      }}
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <Input name="name" placeholder="Your Name" className="royal-border" required />
+        <Input name="email" placeholder="Your Email" type="email" className="royal-border" required />
+      </div>
+      <Input name="subject" placeholder="Subject" className="royal-border" required />
+      <Textarea
+        name="message"
+        placeholder="Your Message"
+        className="royal-border min-h-32"
+        rows={4}
+        required
+      />
+      <Button type="submit" className="btn-royal w-full">
+        Send Message <Send className="ml-2 h-4 w-4" />
+      </Button>
+    </form>
+  </CardContent>
+</Card>
+       
         </div>
       </div>
     </div>
